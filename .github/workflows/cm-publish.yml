@@ -21,7 +21,7 @@ jobs:
 
       - name: Add uclalibrary helm repo
         run: |
-          helm repo add uclalibrary https://chartmuseum.library.ucla.edu/charts/
+          helm repo add uclalibrary https://chartmuseum.library.ucla.edu
 
       - name: Install ChartMuseum helm plugin
         run: |
