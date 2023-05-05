@@ -27,8 +27,9 @@ jobs:
         run: |
           helm plugin install https://github.com/chartmuseum/helm-push
 
-      - name: Build ArgoCD dependencies
+      - name: Build ArgoCD chart dependencies
         run: |
+          helm repo add dandydeveloper https://dandydeveloper.github.io/charts/
           helm dependency build charts/argo-cd
 
       - name: Publish ArgoCD helm chart to UCLA Library's Chartmuseum
