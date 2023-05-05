@@ -27,6 +27,10 @@ jobs:
         run: |
           helm plugin install https://github.com/chartmuseum/helm-push
 
+      - name: Build ArgoCD dependencies
+        run: |
+          helm dependency build charts/argo-cd
+
       - name: Publish ArgoCD helm chart to UCLA Library's Chartmuseum
         run: |
           helm cm-push charts/argo-cd uclalibrary -u ${CM_USERNAME} -p ${CM_PASSWORD}
